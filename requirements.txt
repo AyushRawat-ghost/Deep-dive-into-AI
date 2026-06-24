@@ -1,0 +1,17 @@
+# Core numerical and data analysis libraries
+numpy
+pandas
+
+# Data visualization
+matplotlib
+
+# Machine learning algorithms and utilities
+scikit-learn
+
+# Production gradient boosting libraries
+xgboost
+lightgbm
+catboost
+
+# Interactive environment for running the notebooks
+jupyterlab
