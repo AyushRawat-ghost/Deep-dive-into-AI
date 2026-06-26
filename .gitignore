@@ -42,3 +42,6 @@ ehthumbs.db
 *.bin
 *.onnx
 *.pb
+
+# TensorBoard logs and telemetry
+**/runs/

@@ -16,8 +16,10 @@ Deep dive into AI/
 │   ├── Backpropagation_triton.py
 │   ├── multiple_perceptron_triton.py
 │   ├── perceptron.ipynb
+│   ├── Regressor MLP.ipynb
 │   └── single_perceptron_triton.py
 ├── Deep Learning Production Class/
+│   ├── California House Prediction.ipynb
 │   └── Image Classifier.ipynb
 ├── Supervised Learning Foundation Class/
 │   ├── CART.ipynb
@@ -162,12 +164,20 @@ Focuses on GPU-accelerated computing foundations, kernel programming, and custom
     *   **Core Concepts:** Autograd validation, mathematical verification, GPU execution.
     *   **Description:** Jupyter notebook to test and validate output correctness of all three custom Triton kernels against PyTorch's native autograd engine.
     *   **Key Libraries:** `torch`, `triton`.
+*   **[Regressor MLP.ipynb](file:///c:/Users/Ayush/Git%20Repo/Deep%20dive%20into%20AI/Deep%20Learning%20Foundation%20Class/Regressor%20MLP.ipynb)**
+    *   **Core Concepts:** TensorBoard telemetry, Multi-Layer Perceptron (MLP), regression optimization, custom loss metrics logging, weight distribution tracking.
+    *   **Description:** Implements a multi-layer perceptron regression model, logging real-time batch and epoch telemetry to TensorBoard charts.
+    *   **Key Libraries:** `torch`, `torch.utils.tensorboard`.
 
 ---
 
 ### 6. Deep Learning Production Class
 Deals with productionizing deep learning architectures, building input pipelines, and scaling model training.
 
+*   **[California House Prediction.ipynb](file:///c:/Users/Ayush/Git%20Repo/Deep%20dive%20into%20AI/Deep%20Learning%20Production%20Class/California%20House%20Prediction.ipynb)**
+    *   **Core Concepts:** Wide & Deep architectures, dropout regularization, dataset splitting & standard scaling, gradient clipping, evaluation metrics.
+    *   **Description:** Implements a Wide & Deep MLP architecture for regression on the California Housing dataset, featuring custom dropout regularization, standard scaling, and gradient norm clipping.
+    *   **Key Libraries:** `torch`, `sklearn`, `pandas`.
 *   **[Image Classifier.ipynb](file:///c:/Users/Ayush/Git%20Repo/Deep%20dive%20into%20AI/Deep%20Learning%20Production%20Class/Image%20Classifier.ipynb)**
     *   **Core Concepts:** Production data pipelines, dataset normalization, batch configurations, PyTorch CUDA pipeline.
     *   **Description:** Configures a production image classification pipeline using standard torchvision transforms, custom batch loaders, and datasets (MNIST) targeting GPU hardware.
