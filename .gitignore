@@ -31,3 +31,14 @@ venv.bak/
 .DS_Store?
 Thumbs.db
 ehthumbs.db
+
+# Local datasets and data directories
+**/data/
+
+# Deep Learning model weights / checkpoints
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.pb

@@ -12,6 +12,13 @@ A comprehensive, hands-on repository mapping machine learning models from mathem
 
 ```directory
 Deep dive into AI/
+├── Deep Learning Foundation Class/
+│   ├── Backpropagation_triton.py
+│   ├── multiple_perceptron_triton.py
+│   ├── perceptron.ipynb
+│   └── single_perceptron_triton.py
+├── Deep Learning Production Class/
+│   └── Image Classifier.ipynb
 ├── Supervised Learning Foundation Class/
 │   ├── CART.ipynb
 │   ├── Decision Tree.ipynb
@@ -136,6 +143,38 @@ Explores advanced density estimators, hierarchical clusters, dimensionality redu
 
 ---
 
+### 5. Deep Learning Foundation Class
+Focuses on GPU-accelerated computing foundations, kernel programming, and custom backpropagation using OpenAI Triton.
+
+*   **[single_perceptron_triton.py](file:///c:/Users/Ayush/Git%20Repo/Deep%20dive%20into%20AI/Deep%20Learning%20Foundation%20Class/single_perceptron_triton.py)**
+    *   **Core Concepts:** Triton GPU programming, memory layout, thread indexing, loading/storing data.
+    *   **Description:** Implements a single perceptron activation step as a Triton kernel, executing parallel inputs directly on the GPU.
+    *   **Key Libraries:** `triton`, `triton.language`, `torch`.
+*   **[multiple_perceptron_triton.py](file:///c:/Users/Ayush/Git%20Repo/Deep%20dive%20into%20AI/Deep%20Learning%20Foundation%20Class/multiple_perceptron_triton.py)**
+    *   **Core Concepts:** Block matrix loading, matrix multiplication, bias tile accumulation, block masking.
+    *   **Description:** Expands Triton implementations to a multi-neuron perceptron layer, performing parallelized block matrix multiplication and thresholding activation.
+    *   **Key Libraries:** `triton`, `triton.language`, `torch`.
+*   **[Backpropagation_triton.py](file:///c:/Users/Ayush/Git%20Repo/Deep%20dive%20into%20AI/Deep%20Learning%20Foundation%20Class/Backpropagation_triton.py)**
+    *   **Core Concepts:** Custom backward pass, gradient accumulator tiles, parallel gradient reduction.
+    *   **Description:** Custom Triton kernel implementing backpropagation to compute gradients for both weights ($dW$) and biases ($db$) in parallel.
+    *   **Key Libraries:** `triton`, `triton.language`, `torch`.
+*   **[perceptron.ipynb](file:///c:/Users/Ayush/Git%20Repo/Deep%20dive%20into%20AI/Deep%20Learning%20Foundation%20Class/perceptron.ipynb)**
+    *   **Core Concepts:** Autograd validation, mathematical verification, GPU execution.
+    *   **Description:** Jupyter notebook to test and validate output correctness of all three custom Triton kernels against PyTorch's native autograd engine.
+    *   **Key Libraries:** `torch`, `triton`.
+
+---
+
+### 6. Deep Learning Production Class
+Deals with productionizing deep learning architectures, building input pipelines, and scaling model training.
+
+*   **[Image Classifier.ipynb](file:///c:/Users/Ayush/Git%20Repo/Deep%20dive%20into%20AI/Deep%20Learning%20Production%20Class/Image%20Classifier.ipynb)**
+    *   **Core Concepts:** Production data pipelines, dataset normalization, batch configurations, PyTorch CUDA pipeline.
+    *   **Description:** Configures a production image classification pipeline using standard torchvision transforms, custom batch loaders, and datasets (MNIST) targeting GPU hardware.
+    *   **Key Libraries:** `torch`, `torchvision`, `torch.utils.data.DataLoader`.
+
+---
+
 ## 🚀 Installation & Setup
 
 1.  **Clone the Repository:**
@@ -156,7 +195,14 @@ Explores advanced density estimators, hierarchical clusters, dimensionality redu
 3.  **Install Dependencies:**
     You can install the necessary packages using:
     ```bash
+    # Install core ML packages
     pip install numpy pandas matplotlib scikit-learn jupyterlab xgboost lightgbm catboost
+
+    # Install Deep Learning dependencies (PyTorch & torchvision)
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+
+    # Install Triton (Note: for Windows, use triton-windows)
+    pip install -U "triton-windows<3.8"
     ```
 
 4.  **Launch JupyterLab:**
@@ -171,3 +217,5 @@ Explores advanced density estimators, hierarchical clusters, dimensionality redu
 *   **Data Preparation:** Gain skills in Pipeline-based grid searches, anomaly detection with GMMs, dimensionality reduction (PCA), and scaling.
 *   **Ensembling:** Understand Bagging, Boosting (Ada/Gradient), and Stacking architecture styles.
 *   **Label Optimization:** Harness clustering (K-Means) to perform Semi-Supervised Learning, saving manual labeling effort.
+*   **GPU Kernel Programming:** Author, compile, and run custom GPU kernels directly using OpenAI Triton language for matrix operations and forward/backward propagation.
+*   **Deep Learning Pipelines:** Construct production-ready input preprocessing pipelines, dataset normalizations, and data loaders in PyTorch.
